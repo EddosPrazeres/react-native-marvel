@@ -5,7 +5,7 @@ export const Container = styled.View`
   width: 100%;
   position: relative;
   margin-bottom: ${metrics.baseSpacing(0.25)};
-  background-color: ${colors.lightBlack};
+  background-color: ${colors.midlack};
 `
 
 export const ImageBGOverlay = styled.View`

@@ -1,6 +1,6 @@
 import React from 'react'
-import { FlatList } from 'react-native'
 import PropTypes from 'prop-types'
+import { FlatList } from './styles'
 import CardHero from '../CardHero'
 import { LoadingRequest, EmptyRequest } from '../../../components'
 
