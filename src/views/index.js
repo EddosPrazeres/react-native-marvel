@@ -1,7 +1,7 @@
-import HomeScreen from './HomeScreen'
+import HeroesScreen from './HeroesScreen'
 // Import views here
 
 export {
-  HomeScreen,
+  HeroesScreen,
   // Insert views here
 }

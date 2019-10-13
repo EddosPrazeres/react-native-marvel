@@ -4,7 +4,17 @@ import { createStackNavigator } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
 
 const AppNavigator = createStackNavigator({
-  HomeScreen: { screen: views.HomeScreen },
+  HeroesScreen: { 
+    screen: views.HeroesScreen , 
+    navigationOptions: {
+      title: "Marvel",
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: '#21252d',
+        borderBottomWidth: 0,
+      },
+    },
+  },
   // Insert views here
 })
 
