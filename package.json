@@ -16,11 +16,12 @@
     "jest",
     "template",
     "boilerplate"
-  ],
-  "author": "Ed dos Prazeres <edimilsonpereira.pro@gmail.com>",
+  ],  
   "dependencies": {
-    "axios": "latest",
+    "axios": "0.18.0",
     "expo": "^35.0.0",
+    "js-md5": "^0.7.3",
+    "md5": "^2.2.1",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
@@ -41,5 +42,7 @@
     "babel-preset-expo": "^7.0.0",
     "plop": "latest"
   },
-  "private": false
+  "author": "Ed dos Prazeres <edimilsonpereira.pro@gmail.com>",
+  "private": true,
+  "license":"MIT"
 }
