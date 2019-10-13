@@ -6,7 +6,6 @@ import { colors } from '../../../styles'
 import { Button } from "react-native"
 import { withNavigation } from 'react-navigation';
 const RightHeader = ({name, size, navigation}) => {
-  console.log("DADO DAOD", navigation)
   return (
     <Container>
       <TouchableHighlight

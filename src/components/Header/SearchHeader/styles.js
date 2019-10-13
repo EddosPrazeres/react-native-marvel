@@ -4,7 +4,7 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   width: ${metrics.sizeScreen.width};
-  padding: 0 8px;
+  padding: ${metrics.baseSpacing(0)} ${metrics.baseSpacing(1)};
 `
 
 export const TextInput = styled.TextInput`
@@ -12,10 +12,9 @@ export const TextInput = styled.TextInput`
   flex: 1;
   color: ${colors.black};
   height: 30px;
-  /* width: ${metrics.sizeScreen.width}; */
-  margin-right: 8px;
+  margin-right: ${metrics.baseSpacing(1)};
   border-radius: 4px;
-  padding: 0 8px;
+  padding: ${metrics.baseSpacing(0)} ${metrics.baseSpacing(1)};
 `
 
 export const Text = styled.Text`
@@ -24,5 +23,5 @@ export const Text = styled.Text`
 
 export const TouchableHighlight = styled.TouchableHighlight`
   background-color: transparent;
-  padding: 4px;
+  padding: ${metrics.baseSpacing(0.5)};
 `
