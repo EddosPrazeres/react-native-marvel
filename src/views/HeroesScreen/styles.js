@@ -3,5 +3,5 @@ import { colors, metrics } from '../../styles'
 
 export const Container = styled.View`
   flex: 1;
-  background: ${colors.black};
+  background: ${colors.lightBlack};
 `
