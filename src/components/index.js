@@ -13,11 +13,19 @@ import {
   LoadingRequest
 } from './Requests'
 
+import {
+  LogoHeader,
+  RightHeader,
+  SearchHeader
+} from './Header'
 // Import component here
 
 export {
   ListHeroes,
   EmptyRequest,
   LoadingRequest,
+  LogoHeader,
+  RightHeader,
+  SearchHeader,
   // Insert component here
 }
