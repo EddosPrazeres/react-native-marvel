@@ -1,10 +1,9 @@
 import React from 'react'
 import { Container, TextInput, Text, TouchableHighlight} from './styles'
 import PropTypes from 'prop-types'
-import { withNavigation } from 'react-navigation';
 import { Touchable } from '../../../components'
 
-const ViewComponent = ({navigation, setFeedbacks, queryUpdate, querySearch}) => {
+const ViewComponent = ({onPress, queryUpdate, querySearch}) => {
   return (
     <Container>
       <TextInput
@@ -14,7 +13,7 @@ const ViewComponent = ({navigation, setFeedbacks, queryUpdate, querySearch}) => 
         placeholder={"Tente encontrar um herói"}
       />
 
-      <Touchable onPress={() => setFeedbacks(true)}>
+      <Touchable onPress={() => onPress()}>
         <Text>Cancelar</Text>
       </Touchable>
     </Container>
@@ -29,4 +28,4 @@ ViewComponent.propTypes = {
 
 }
 
-export default withNavigation(ViewComponent)
+export default ViewComponent

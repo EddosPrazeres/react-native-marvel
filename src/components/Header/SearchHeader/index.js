@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Creators as MarvelActions} from '../../../redux/reducers/Marvel'
 import PropTypes from 'prop-types'
 import ViewComponent from './ViewComponent'
-
+import { withNavigation } from 'react-navigation';
 class SearchHeader extends Component {
     state = {
         querySearch: '',
@@ -34,12 +34,14 @@ class SearchHeader extends Component {
         }
     } 
 
-    setFeedbacks = (loading) => this.props.setFeedbacksSearch(loading)
-
+    onPress = () => {
+        this.props.clearSearchQuery();
+        this.props.navigation.goBack();
+    }
     render(){
         const { querySearch } = this.state;
         return(
-            <ViewComponent querySearch={querySearch} {...this.props} queryUpdate={(data)=> this.queryUpdate(data)} />
+            <ViewComponent onPress={()=> this.onPress()} querySearch={querySearch} {...this.props} queryUpdate={(data)=> this.queryUpdate(data)} />
         )
     }
 }
@@ -62,4 +64,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {...MarvelActions}
-)(SearchHeader)
+)(withNavigation(SearchHeader))

@@ -3,8 +3,6 @@ import * as views from '../views'
 import { createStackNavigator, HeaderBackButton } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
 import { LogoHeader, RightHeader, SearchHeader } from '../components'
-
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../styles'
 const AppNavigator = createStackNavigator(
   {
@@ -32,9 +30,8 @@ const AppNavigator = createStackNavigator(
   // Insert views here
   },
   {
-    initialRouteName: 'SearchScreen',
+    initialRouteName: 'HeroesScreen',
     defaultNavigationOptions: {
-      // headerBackTitle: <Icon name="home" size={18} color="#999" />,
       headerTintColor: colors.primary,
         headerStyle: {
           backgroundColor: colors.black,
