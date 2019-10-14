@@ -1,22 +1,12 @@
 import React from 'react'
 import { Container} from './styles'
-import PropTypes from 'prop-types'
-import { EmptyRequest } from '../../components'
-
-const ViewComponent = ({title}) => {
+import {  ListHeroesSearched } from '../../components'
+const ViewComponent = () => {
   return (
     <Container>
-      <EmptyRequest message="Será que ainda existem heróis para serem encontrados?"/>
+      <ListHeroesSearched />
     </Container>
   );
-}
-
-ViewComponent.defaultProps = {
-
-}
-
-ViewComponent.propTypes = {
-
 }
 
 export default ViewComponent
