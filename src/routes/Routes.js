@@ -32,7 +32,7 @@ const AppNavigator = createStackNavigator(
   // Insert views here
   },
   {
-    initialRouteName: 'HeroesScreen',
+    initialRouteName: 'SearchScreen',
     defaultNavigationOptions: {
       // headerBackTitle: <Icon name="home" size={18} color="#999" />,
       headerTintColor: colors.primary,
