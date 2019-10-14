@@ -1,24 +1,47 @@
-import React from 'react'
-import { Container, TextInput, Text, TouchableHighlight} from './styles'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import {Creators as MarvelActions} from '../../../redux/reducers/Marvel'
 import PropTypes from 'prop-types'
-import { withNavigation } from 'react-navigation';
+import ViewComponent from './ViewComponent'
 
-const SearchHeader = ({navigation}) => {
-  return (
-    <Container>
-      <TextInput
-        // onChangeText={text => onChangeText(text)}
-        // value={value}
-        placeholder={"Encontre um herói"}
-      />
+class SearchHeader extends Component {
+    state = {
+        querySearch: '',
+        name: '',
+        typing: false,
+        typingTimeout: 0    
+    }
 
-      <TouchableHighlight
-        underlayColor="transparent"
-        onPress={() => navigation.goBack()}>
-        <Text>Cancelar</Text>
-      </TouchableHighlight>
-    </Container>
-  );
+    componentDidMount = () => this.count = null
+
+    queryUpdate(querySearch) {
+        self = this;
+
+        clearTimeout(this.count);
+
+        this.setState({ querySearch: querySearch });
+        this.count = setTimeout( () => self.updateSearch(querySearch), 1000);
+    }
+
+    updateSearch(query) {
+        if (query.length > 0) {
+            this.props.setFeedbacksSearch(true)
+            this.props.updateSearchQuery(query).then(()=> {
+                this.props.setFeedbacksSearch(false)
+            })
+        } else {
+            this.props.clearSearchQuery();
+        }
+    } 
+
+    setFeedbacks = (loading) => this.props.setFeedbacksSearch(loading)
+
+    render(){
+        const { querySearch } = this.state;
+        return(
+            <ViewComponent querySearch={querySearch} {...this.props} queryUpdate={(data)=> this.queryUpdate(data)} />
+        )
+    }
 }
 
 SearchHeader.defaultProps = {
@@ -29,4 +52,14 @@ SearchHeader.propTypes = {
 
 }
 
-export default withNavigation(SearchHeader)
+
+const mapStateToProps = state => {
+  return {
+    loadingSearch: state.Marvel.loadingSearch,
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  {...MarvelActions}
+)(SearchHeader)

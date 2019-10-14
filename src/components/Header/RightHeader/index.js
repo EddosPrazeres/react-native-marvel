@@ -1,18 +1,16 @@
 import React from 'react'
-import { Container, TouchableHighlight } from './styles'
+import { Container } from './styles'
 import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors } from '../../../styles'
-import { Button } from "react-native"
 import { withNavigation } from 'react-navigation';
+import { Touchable } from '../../../components'
 const RightHeader = ({name, size, navigation}) => {
   return (
     <Container>
-      <TouchableHighlight
-        underlayColor="transparent"
-        onPress={() => navigation.navigate('SearchScreen')}>
-       <Icon name={name} size={size} color={colors.primary} />
-      </TouchableHighlight>
+      <Touchable onPress={() => navigation.navigate('SearchScreen')}>
+        <Icon name={name} size={size} color={colors.primary} style={{margin: 4}}/>
+      </Touchable>
     </Container>
   );
 }
