@@ -28,7 +28,6 @@ export const Message = styled.View`
 `
 
 export const MessageText = styled.Text`
-  color: black;
   font-size: 24px;
   text-align: center;
   color:  ${colors.black};

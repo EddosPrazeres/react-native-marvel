@@ -2,7 +2,6 @@ import React from 'react'
 import { Container, ImageBG, Message, MessageText, MessageArrow} from './styles'
 import PropTypes from 'prop-types'
 
-
 const ViewComponent = ({message}) => {
   return (
     <Container>
