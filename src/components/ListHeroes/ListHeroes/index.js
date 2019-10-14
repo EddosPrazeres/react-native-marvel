@@ -10,9 +10,7 @@ class ListHeroes extends Component {
     loading: false,
   }
 
-  componentDidMount = () => {
-    this.loadHeroes();
-  }
+  componentDidMount = () => this.loadHeroes()
 
   loadHeroes = () => { 
     const { offset, loading } = this.state;

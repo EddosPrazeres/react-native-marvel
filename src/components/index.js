@@ -18,6 +18,12 @@ import {
   RightHeader,
   SearchHeader
 } from './Header'
+
+import {
+  ListHeroesSearched
+} from './ListHeroesSerched'
+
+import Touchable from './Touchable'
 // Import component here
 
 export {
@@ -27,5 +33,7 @@ export {
   LogoHeader,
   RightHeader,
   SearchHeader,
+  ListHeroesSearched,
+  Touchable,
   // Insert component here
 }

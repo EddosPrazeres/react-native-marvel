@@ -12,7 +12,7 @@ const ViewComponent = (props) => {
       keyExtractor = {(item, index) => index.toString ()}
       onEndReached={() => props.loadHeroes()}
       onEndReachedThreshold={0.3}
-      ListHeaderComponent={() => <EmptyRequest loading={props.loading} count={props.heroes.length} message={props.messageEmpty}/>}
+      ListHeaderComponent={() => <EmptyRequest from="heroes" loading={props.loading} count={props.heroes.length} message={props.messageEmpty}/>}
       ListFooterComponent={() => <LoadingRequest loading={props.loading}/> }
     />
   );
@@ -22,7 +22,7 @@ ViewComponent.defaultProps = {
   heroes: [],
   loading: false,
   loadHeroes: () => null,
-  messageEmpty: "Oxi, parece que não tem heróis para serem exibidos."
+  messageEmpty: "Parece que todos os heróis foram eliminados ;)."
 }
 
 ViewComponent.propTypes = {
