@@ -42,11 +42,7 @@ export {
   SearchHeader,
   ListHeroesSearched,
   Touchable,
-  HeroDetailsList,
-  CardHeroDetails,
   ImageBG,
-  InformationsHeroDetails,
-  ContentScrollHeroDetails,
   HeroDetails,
   LeftHeader,
   // Insert component here

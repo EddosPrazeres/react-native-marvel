@@ -10,7 +10,7 @@ const ViewComponent = ({name, size, onPress}) => {
   return (
     <Container>
       <Touchable onPress={() => onPress()}>
-        <Icon name={name} size={size} color={colors.primary} style={{margin: 4}}/>
+        <Icon name={name} size={size} color={colors.white} style={{margin: 4}}/>
       </Touchable>
     </Container>
   );
