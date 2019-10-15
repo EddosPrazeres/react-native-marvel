@@ -23,7 +23,14 @@ import {
   ListHeroesSearched
 } from './ListHeroesSerched'
 
+
+import {
+  HeroDetails
+} from './HeroDetails'
+
 import Touchable from './Touchable'
+import ImageBG from './ImageBG'
+import LeftHeader from './Header/LeftHeader'
 // Import component here
 
 export {
@@ -35,5 +42,12 @@ export {
   SearchHeader,
   ListHeroesSearched,
   Touchable,
+  HeroDetailsList,
+  CardHeroDetails,
+  ImageBG,
+  InformationsHeroDetails,
+  ContentScrollHeroDetails,
+  HeroDetails,
+  LeftHeader,
   // Insert component here
 }

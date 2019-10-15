@@ -2,9 +2,10 @@ import React from 'react'
 import { Container, ImageBG, ImageBGOverlay, Name} from './styles'
 import PropTypes from 'prop-types'
 import { Touchable } from '../../../components'
-const CadHeroSearched = (props) => {
+
+const ViewComponent = (props) => {
   return (
-    <Touchable onPress={()=> null}>
+    <Touchable onPress={()=> props.setHero(props.item)}>
       <Container>
         <ImageBG resizeMode="cover" source={{uri: `${props.item.thumbnail.path}.${props.item.thumbnail.extension}`}}> 
           <ImageBGOverlay/>
@@ -15,8 +16,9 @@ const CadHeroSearched = (props) => {
   );
 }
 
-CadHeroSearched.propTypes = {
-  item: PropTypes.object.isRequired
+ViewComponent.propTypes = {
+  item: PropTypes.object.isRequired,
+  setHero: PropTypes.func.isRequired,
 }
 
-export default CadHeroSearched
+export default ViewComponent

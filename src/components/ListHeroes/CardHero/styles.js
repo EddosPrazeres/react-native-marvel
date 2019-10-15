@@ -8,24 +8,6 @@ export const Container = styled.View`
   background-color: ${colors.midlack};
 `
 
-export const ImageBGOverlay = styled.View`
-  position: absolute;
-  top:${metrics.baseSpacing(0)};
-  left:${metrics.baseSpacing(0)};
-  height: 100%;
-  width: 100%;
-  background-color: ${colors.black};
-  opacity: 0.3;
-`
-
-export const ImageBG = styled.ImageBackground`
-  position: absolute;
-  top:${metrics.baseSpacing(0)};
-  left:${metrics.baseSpacing(0)};
-  height: 100%;
-  width: 100%;
-`
-
 export const NameHeroX = styled.View`
   position: absolute;
   left: ${metrics.baseSpacing(4)};

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Creators as MarvelActions} from '../../../redux/reducers/Marvel'
 import PropTypes from 'prop-types'
 import ViewComponent from './ViewComponent'
-
+import { withNavigation } from 'react-navigation';
 class ListHeroes extends Component {
   state = {
     offset: 0,
@@ -27,11 +27,16 @@ class ListHeroes extends Component {
     })
   }
 
+  setHero = (hero) => {
+    this.props.selectHero(hero)
+    this.props.navigation.navigate('HeroDetailsScreen')
+  }
+
   render(){
     const { loading } = this.state;
 
     return(
-      <ViewComponent {...this.props} loadHeroes={() => this.loadHeroes()} loading={loading}/>
+      <ViewComponent {...this.props} setHero={(hero) => this.setHero(hero)} loadHeroes={() => this.loadHeroes()} loading={loading}/>
     )
   }
 }
@@ -53,4 +58,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {...MarvelActions}
-)(ListHeroes)
+)(withNavigation(ListHeroes))

@@ -2,7 +2,7 @@ import React from 'react'
 import * as views from '../views'
 import { createStackNavigator, HeaderBackButton } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
-import { LogoHeader, RightHeader, SearchHeader } from '../components'
+import { LogoHeader, RightHeader, SearchHeader, LeftHeader } from '../components'
 import { colors } from '../styles'
 const AppNavigator = createStackNavigator(
   {
@@ -27,15 +27,26 @@ const AppNavigator = createStackNavigator(
         headerLeft: null
       }
     },
+    HeroDetailsScreen: { 
+      screen: views.HeroDetailsScreen,
+      navigationOptions: {
+        headerTransparent: true, 
+        headerTintColor: colors.white,
+        headerStyle: { backgroundColor: 'transparent'},
+        headerLeft: <LeftHeader />
+      }
+    },
   // Insert views here
   },
   {
     initialRouteName: 'HeroesScreen',
     defaultNavigationOptions: {
+      headerTransparent: false, 
       headerTintColor: colors.primary,
+      headerBackTitle:null,
         headerStyle: {
           backgroundColor: colors.black,
-          borderBottomWidth: 0,
+          borderBottomWidth: 0
         },
     }
   }

@@ -3,11 +3,17 @@ import { connect } from 'react-redux'
 import {Creators as MarvelActions} from '../../../redux/reducers/Marvel'
 import PropTypes from 'prop-types'
 import ViewComponent from './ViewComponent'
+import { withNavigation } from 'react-navigation';
 
 class ListHeroesSearched extends Component {
+  setHero = (hero) => {
+    this.props.selectHero(hero)
+    this.props.navigation.navigate('HeroDetailsScreen')
+  }
+
   render(){
     return(
-      <ViewComponent {...this.props}/>
+      <ViewComponent {...this.props} setHero={(hero) => this.setHero(hero)}/>
     )
   }
 }
@@ -31,4 +37,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {...MarvelActions}
-)(ListHeroesSearched)
+)(withNavigation(ListHeroesSearched))
