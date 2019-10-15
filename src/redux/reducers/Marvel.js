@@ -4,7 +4,8 @@ export const Types = {
   GET_HEROES: 'Marvel/GET_HEROES',
   SET_FEEDBACKS_SEARCH: 'Marvel/SET_FEEDBACKS_SEARCH',
   UPDATE_SEARCH_QUERY: 'Marvel/UPDATE_SEARCH_QUERY',
-  CLEAR_SEARCH_QUERY: 'Marvel/CLEAR_SEARCH_QUERY'
+  CLEAR_SEARCH_QUERY: 'Marvel/CLEAR_SEARCH_QUERY',
+  SELECT_HERO:'Marvel/SELECT_HERO'
 }
 
 export const Creators = {
@@ -36,6 +37,12 @@ export const Creators = {
       payload: [],
     }
   },
+  selectHero: (hero) => {
+    return {
+      type: Types.SELECT_HERO,
+      payload: hero
+    }
+  }
 }
 
 const INITIAL_STATE = {
@@ -45,6 +52,7 @@ const INITIAL_STATE = {
   messageSearch: '',
   querySearch: false,
   loadingSearch: false,
+  hero: undefined,
 }
 
 export default function Marvel(state = INITIAL_STATE, action) {
@@ -73,6 +81,12 @@ export default function Marvel(state = INITIAL_STATE, action) {
         ...state,
         searchHeroes: action.payload,
         searchHeroesLoaded: false,
+      }
+
+    case Types.SELECT_HERO: 
+      return {
+        ...state,
+        hero: action.payload,
       }
     default:
       return state
