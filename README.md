@@ -1,7 +1,7 @@
 # Marvel Developer 
-Lista de Heróis            |  Busca de Heróis
+Lista de Heróis            |  Detalhes sobre o herói
 :-------------------------:|:-------------------------:
-![](https://i.ibb.co/p4xbJFc/Home.jpg)  |  ![](https://i.ibb.co/wpcRdMW/Busca.jpg)
+![](https://i.ibb.co/p4xbJFc/Home.jpg)  |  ![](https://i.ibb.co/WkcYPmB/172f993d-fdc2-464b-8f38-ee661a0420a1.jpg)
 ### Caracteristicas
 
   - Duck Pattern
